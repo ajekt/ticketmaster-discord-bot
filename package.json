@@ -1,0 +1,17 @@
+{
+  "name": "ticketmaster-bot",
+  "version": "1.0.0",
+  "description": "A discord bot for the Ticket Master API.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ajekt",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "moment": "^2.29.0",
+    "node-fetch": "^2.6.1",
+    "winston": "^3.3.3"
+  }
+}
