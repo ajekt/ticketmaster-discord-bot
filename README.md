@@ -1,3 +1,19 @@
+# ticketmaster-discord-bot
+A small discord bot for searching Ticketmaster.<br>
+Usage:
+```
+<prefix> search
+
+// Bot prompts for input
+// To configure the search you can change properties:
+date=2021-09-12
+type=Music
+
+search     // Performs search
+cancel     // Cancels the search
+properties // Lists all valid properties
+```
+
 # Deploy to Heroku
 ## Create a new Discord app and bot
 First of you have to create a new discord application for your bot [here](https://discord.com/developers/applications).<br>
