@@ -42,12 +42,13 @@ const Commands = {
         message.channel.send(propertyEmbed);
 
     	  const filter = m => message.author.id === m.author.id;
-        const collector = message.channel.createMessageCollector(filter, { time: 60000 });
+        const collector = message.channel.createMessageCollector(filter, { time: 30000 });
         const propertyList = ["keyword", "postalCode", "city", "countryCode", "stateCode", "type", "date"];
         let propertyObject = {};
 
         collector.on('collect', async m => {
           if (m.content.includes("=")) {
+            collector.resetTimer();
             let property = m.content.trim().replace(/[^\w\s^=^-]/gi, '').split("=");
             let value = property.pop();
             property = property.toString();
@@ -86,6 +87,7 @@ const Commands = {
               break;
 
             case "properties":
+              collector.resetTimer();
               let propertyListText = propertyList.map(item => {
                 return `+ ${item}`;
               });
@@ -97,6 +99,12 @@ const Commands = {
               break;
 
             default:
+          }
+        });
+
+        collector.on('end', (collected, reason) => {
+          if (reason == "time") {
+            message.channel.send(`\:x: ${message.author} request has timed out.`);
           }
         });
       } catch(e) {
