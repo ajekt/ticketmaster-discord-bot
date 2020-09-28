@@ -1,6 +1,6 @@
 const Discord  = require("discord.js");
-const Config   = require(__dirname + "../config.json");
-const Commands = require(__dirname + "commands.js");
+const Config   = require(__dirname + "/../config.json");
+const Commands = require(__dirname + "/commands.js");
 const winston  = require("winston");
 
 const logger = winston.createLogger({

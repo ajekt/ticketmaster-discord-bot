@@ -1,7 +1,7 @@
 const Embed  = require("discord.js").MessageEmbed;
 const moment = require('moment');
 const fetch  = require('node-fetch');
-const Config = require(__dirname + "../config.json");
+const Config = require(__dirname + "/../config.json");
 
 const API_ROOT = 'https://app.ticketmaster.com/discovery/v2/';
 
