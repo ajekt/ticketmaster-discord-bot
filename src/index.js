@@ -12,7 +12,6 @@ const logger = winston.createLogger({
 });
 
 const client = new Discord.Client();
-const ESC = "\033[";
 
 /*
  * --------------------
@@ -24,20 +23,9 @@ client.on('debug', m => logger.log('debug', m));
 client.on('warn', m => logger.log('warn', m));
 client.on('error', m => logger.log('error', m));
 
-client.on("ready", () => {
-  logger.log('info', `Bot started in ${client.guilds.cache.size} servers.`);
-  client.user.setActivity(`Watching ${client.users.cache.size} users...`);
-});
-
-client.on("guildCreate", guild => {
-  logger.log('info', `Joined server "${guild.name}"`);
-  client.user.setActivity(`Watching ${client.users.cache.size} users...`);
-});
-
-client.on("guildDelete", guild => {
-  logger.log('info', `Left server "${guild.name}"`);
-  client.user.setActivity(`Watching ${client.users.cache.size} users...`);
-});
+client.on("ready", () => logger.log('info', `Bot started in ${client.guilds.cache.size} servers.`));
+client.on("guildCreate", guild => logger.log('info', `Joined server "${guild.name}"`));
+client.on("guildDelete", guild => logger.log('info', `Left server "${guild.name}"`));
 
 
 client.on("message", async message => {
