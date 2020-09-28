@@ -1,5 +1,4 @@
 # Deploy to Heroku
-## Get Setup
 ## Create a new Discord app and bot
 First of you have to create a new discord application for your bot [here](https://discord.com/developers/applications).<br>
 Once you've named application go to the Bot tab and click `Add Bot`.
